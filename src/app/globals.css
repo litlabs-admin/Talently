@@ -1,26 +1,360 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+/* ============================================================
+   Talently design system
+   Values measured from Talantely-Landing_Page.png (2929px wide,
+   read as a 2x export => all figures below are design px).
+   ============================================================ */
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-ancizar), ui-serif, Georgia, serif;
+
+  /* Surfaces */
+  --color-ink: #171717; /* dark section band, dark buttons */
+  --color-ink-warm: #221d1d; /* nav bar, hero card chips */
+  --color-navy: #011a39; /* hero wash */
+  --color-surface: #f4f4f4;
+  --color-hairline: #e5e5e5;
+  --color-accent: #ff7f5c;
+
+  /* Text */
+  --color-body: #3a3a3a;
+  --color-muted: #6b6b6b;
+}
+
+:root {
+  /* Layout */
+  --container: 1288px; /* body sections: measured 171 -> 2749 exported */
+  --container-nav: 1326px; /* nav sits ~19px wider each side */
+  --gutter: 24px;
+  --nav-h: 74px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    overflow-x: clip;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Optical tightening for the display sans lines, matching the ref */
+  /* Ancizar's caps measure ~0.78em against Inter's 0.727em, so the serif is
+     set a touch smaller for the two faces to read at the same optical size.
+     Solved from the reference: 'South' caps 44.5px vs 'Hire' caps 46.5px. */
+  .display-serif {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.92em;
+    letter-spacing: -0.005em;
+  }
+}
+
+/* ------------------------------------------------------------
+   Hero price-card motion
+   Entrance plays once; ambient loop is a seamless 6.5s cycle.
+   ------------------------------------------------------------ */
+
+@keyframes tl-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tl-rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tl-strike-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes tl-price-reveal {
+  from {
+    clip-path: inset(0 100% -20% 0);
+    transform: translateY(10px);
+  }
+  to {
+    clip-path: inset(0 0 -20% 0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes tl-rule-wipe {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* 6.5s ambient loop -------------------------------------------------- */
+
+@keyframes tl-chip-cycle {
+  0%,
+  100% {
+    background-color: #221d1d;
+  }
+  8%,
+  22% {
+    background-color: #322a29;
+  }
+  32% {
+    background-color: #221d1d;
+  }
+}
+
+@keyframes tl-chip-bar {
+  0%,
+  100% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  8%,
+  22% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  32% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes tl-sheen {
+  0%,
+  62% {
+    transform: translateX(-140%) skewX(-14deg);
+    opacity: 0;
+  }
+  66% {
+    opacity: 1;
+  }
+  86% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(240%) skewX(-14deg);
+    opacity: 0;
+  }
+}
+
+.tl-card-in {
+  animation: tl-card-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+/* Initial page-load fade. Stagger via --d. */
+.tl-in {
+  animation: tl-rise-in 0.75s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0s) both;
+}
+.tl-fade {
+  animation: tl-fade-in 0.8s ease-out var(--d, 0s) both;
+}
+@keyframes tl-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.tl-strike {
+  transform-origin: left center;
+  animation: tl-strike-draw 0.62s cubic-bezier(0.65, 0, 0.35, 1) 0.75s both;
+}
+.tl-price {
+  animation: tl-price-reveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) 1.05s both;
+}
+.tl-rule {
+  transform-origin: left center;
+  animation: tl-rule-wipe 0.65s cubic-bezier(0.65, 0, 0.35, 1) 1.5s both;
+}
+.tl-copy {
+  animation: tl-rise-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1.7s both;
+}
+.tl-chip {
+  animation:
+    tl-rise-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both,
+    tl-chip-cycle 6.5s cubic-bezier(0.45, 0, 0.55, 1) 2.6s infinite;
+}
+.tl-chip-bar {
+  transform-origin: center;
+  animation: tl-chip-bar 6.5s cubic-bezier(0.45, 0, 0.55, 1) 2.6s infinite;
+}
+.tl-sheen {
+  animation: tl-sheen 6.5s ease-in-out 2.6s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tl-card-in,
+  .tl-in,
+  .tl-fade,
+  .tl-strike,
+  .tl-price,
+  .tl-rule,
+  .tl-copy,
+  .tl-chip,
+  .tl-chip-bar,
+  .tl-sheen {
+    animation: none !important;
+  }
+  .tl-chip-bar,
+  .tl-sheen {
+    opacity: 0;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }
