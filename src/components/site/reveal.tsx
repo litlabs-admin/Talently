@@ -8,6 +8,13 @@ type RevealProps = {
   delay?: number;
   /** How far it travels up, in px. */
   distance?: number;
+  /**
+   * Override the observer's root margin. The default pulls the trigger line
+   * 12% up from the foot of the viewport; elements that can end up inside
+   * that band — the last thing on a short page — need it relaxed or they
+   * never fire.
+   */
+  rootMargin?: string;
   className?: string;
   as?: "div" | "li" | "section" | "header";
   children: React.ReactNode;
@@ -21,6 +28,7 @@ type RevealProps = {
 export function Reveal({
   delay = 0,
   distance = 24,
+  rootMargin = "0px 0px -12% 0px",
   className,
   as: Tag = "div",
   children,
@@ -40,11 +48,11 @@ export function Reveal({
         }
       },
       // Fire a little before the element is fully on screen.
-      { rootMargin: "0px 0px -12% 0px", threshold: 0.05 },
+      { rootMargin, threshold: 0.05 },
     );
     io.observe(el);
     return () => io.disconnect();
-  }, []);
+  }, [rootMargin]);
 
   return (
     <Tag

@@ -137,6 +137,7 @@
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-ancizar), ui-serif, Georgia, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
 
   /* Surfaces */
   --color-ink: #171717; /* dark section band, dark buttons */
@@ -176,6 +177,38 @@
   /* Ancizar's caps measure ~0.78em against Inter's 0.727em, so the serif is
      set a touch smaller for the two faces to read at the same optical size.
      Solved from the reference: 'South' caps 44.5px vs 'Hire' caps 46.5px. */
+  /* The dark proof sections set the serif noticeably larger than the hero
+     does: measured off the reference, its caps run level with the sans while
+     the line itself is ~15% wider. */
+  .display-serif-lg {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.145em;
+    letter-spacing: -0.005em;
+  }
+
+  /* "From Consultation to Hire" sets the serif a shade smaller again — big
+     enough to outrun the sans, but not the 1.145em of the dark chapter. */
+  .display-serif-md {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.09em;
+    letter-spacing: -0.005em;
+  }
+
+  /* "Every Role You / need to Scale" runs the serif line level with the sans
+     caps and a shade wider — measured 292px against the sans line's 348px on
+     the reference, which Ancizar only reaches at ~1.29em. */
+  .display-serif-xl {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.29em;
+    letter-spacing: -0.005em;
+  }
+
   .display-serif {
     font-family: var(--font-serif);
     font-style: italic;

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Ancizar_Serif } from "next/font/google";
+import { Inter, Ancizar_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,6 +16,14 @@ const ancizar = Ancizar_Serif({
   display: "swap",
 });
 
+// The reference sets its numerals and the "Explore features" CTA in a
+// typewriter mono.
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Talently — Hire Top 2% South African Talent for 70% Less",
   description:
@@ -26,7 +34,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${ancizar.variable}`}>
+    <html lang="en" className={`${inter.variable} ${ancizar.variable} ${jetbrains.variable}`}>
       <body className="bg-white text-ink antialiased">{children}</body>
     </html>
   );
