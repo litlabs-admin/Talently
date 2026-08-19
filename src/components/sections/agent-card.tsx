@@ -85,7 +85,7 @@ export function AgentCard({ agent }: { agent: Agent }) {
       <div className="mt-auto px-[21px] pt-[30px] lg:pt-[48px]">
         <div aria-hidden className="h-px w-full bg-hairline" />
         <a
-          href="#book-a-call"
+          href="/contact"
           className="group mt-[12px] flex h-[46px] w-full items-center justify-center gap-[14px] bg-ink-warm text-[19px] font-medium tracking-[-0.01em] text-white transition-opacity hover:opacity-90 lg:h-[46.5px] lg:text-[21px]"
         >
           Hire {agent.name}

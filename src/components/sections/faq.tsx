@@ -175,7 +175,7 @@ export function Faq() {
                 </p>
 
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="mt-10 flex h-[62px] w-full items-center justify-center bg-accent text-[15px] font-medium text-white transition-opacity hover:opacity-90 lg:mt-auto lg:h-[72px]"
                 >
                   Shoot a Direct Mail

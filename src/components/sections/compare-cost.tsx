@@ -109,7 +109,7 @@ export function CompareCost() {
             </p>
             <ActionButton
               variant="dark"
-              href="#book-a-call"
+              href="/contact"
               className="w-full gap-3 sm:w-auto lg:h-[44px] lg:w-[388px] lg:gap-[14px] lg:px-0 lg:text-[17px]"
             >
               See the Math for Your Hire

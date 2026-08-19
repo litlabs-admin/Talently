@@ -60,7 +60,7 @@ export function Hero() {
             </p>
 
             <div style={{ "--d": "0.4s" } as React.CSSProperties} className="tl-in mt-8 flex flex-col gap-3 sm:flex-row sm:items-start lg:mt-[42px] lg:gap-[26px]">
-              <ActionButton href="#book-a-call" variant="light">
+              <ActionButton href="/contact" variant="light">
                 Book Your Free Consultation
                 <ButtonArrow />
               </ActionButton>

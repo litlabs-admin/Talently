@@ -76,7 +76,7 @@ export function StillNotConvinced() {
               className="mt-9 w-full lg:mt-[57px]"
             >
               <a
-                href="#contact"
+                href="/contact"
                 className="mx-auto flex h-[52px] w-full max-w-[272px] items-center justify-center gap-[10px] bg-white text-[16px] font-medium tracking-[-0.01em] text-ink transition-opacity hover:opacity-90 lg:h-[46px] lg:text-[17px]"
               >
                 Book a Call

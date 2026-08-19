@@ -1,34 +1,19 @@
 import Link from "next/link";
 import { Logo } from "@/components/site/logo";
-import {
-  FacebookIcon,
-  GithubIcon,
-  InstagramIcon,
-  TwitterIcon,
-} from "@/components/site/social-icons";
+import { FacebookIcon, InstagramIcon } from "@/components/site/social-icons";
 import { cn } from "@/lib/utils";
 
-const ROLES = [
-  { label: "Virtual Assistant", href: "#roles" },
-  { label: "SDR", href: "#roles" },
-  { label: "Account Manager", href: "#roles" },
-  { label: "Graphic Designer", href: "#roles" },
-  { label: "Accounting / Finance", href: "#roles" },
-];
-
 const COMPANY = [
-  { label: "Why Talently", href: "#why-talently" },
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Book a Call", href: "#book-a-call" },
+  { label: "Why Talently", href: "/#why-talently" },
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Book a Call", href: "/contact" },
 ];
 
 const SOCIALS = [
-  { label: "Twitter", href: "#", Icon: TwitterIcon, brand: false },
   { label: "Facebook", href: "#", Icon: FacebookIcon, brand: true },
   { label: "Instagram", href: "#", Icon: InstagramIcon, brand: false },
-  { label: "GitHub", href: "#", Icon: GithubIcon, brand: false },
 ];
 
 function ColumnHeading({ children }: { children: React.ReactNode }) {
@@ -53,9 +38,9 @@ export function SiteFooter() {
       <div className="mx-auto w-full max-w-[1341px] px-5 sm:px-10 lg:px-8">
         {/* Columns ---------------------------------------------------- */}
         <div className="pt-[110px] pb-[52px] sm:pt-[140px] lg:px-14 lg:pt-[181px] lg:pb-[80px]">
-          <div className="grid grid-cols-2 gap-x-6 gap-y-11 md:grid-cols-3 md:gap-x-8 md:gap-y-14 lg:grid-cols-[452.5fr_295fr_234fr_183.5fr] lg:gap-x-0 lg:gap-y-0">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-11 md:gap-x-8 md:gap-y-14 lg:grid-cols-[636fr_295fr_234fr] lg:gap-x-0 lg:gap-y-0">
             {/* Brand */}
-            <div className="col-span-2 md:col-span-3 lg:col-span-1">
+            <div className="col-span-2 lg:col-span-1">
               <Logo className="gap-3" />
               <p className="mt-6 max-w-[292px] text-[15px] leading-[23px] text-white/65 lg:mt-[32px]">
                 Connecting great businesses with South Africa&rsquo;s top
@@ -81,20 +66,6 @@ export function SiteFooter() {
               </ul>
             </div>
 
-            {/* Roles */}
-            <nav aria-label="Roles">
-              <ColumnHeading>Roles</ColumnHeading>
-              <ul className="mt-[18px] space-y-[4px] lg:mt-[34px]">
-                {ROLES.map((l) => (
-                  <li key={l.label}>
-                    <Link href={l.href} className={LINK}>
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-
             {/* Company */}
             <nav aria-label="Company">
               <ColumnHeading>Company</ColumnHeading>
@@ -110,7 +81,7 @@ export function SiteFooter() {
             </nav>
 
             {/* Contact */}
-            <div className="col-span-2 md:col-span-1">
+            <div>
               <ColumnHeading>Contact</ColumnHeading>
               <ul className="mt-[18px] space-y-[9px] lg:mt-[39px]">
                 <li className="text-[15px] leading-[22px] text-white/72">

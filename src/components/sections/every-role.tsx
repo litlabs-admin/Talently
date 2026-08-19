@@ -179,7 +179,7 @@ function RoleRow({ role, index }: { role: Role; index: number }) {
 
         <div className="mt-3 flex justify-end lg:mt-[13px]">
           <a
-            href="#book-a-call"
+            href="/contact"
             className="text-[18px] leading-[26px] text-ink underline underline-offset-[4px] decoration-from-font transition-opacity hover:opacity-70 lg:text-[20px] lg:leading-[28px]"
           >
             Book this role

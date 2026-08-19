@@ -90,7 +90,7 @@ export function CapabilityCard({ capability }: { capability: Capability }) {
           <div aria-hidden className="h-px w-full bg-black/20" />
           <ActionButton
             variant="dark"
-            href="#book-a-call"
+            href="/contact"
             className="mt-5 w-full gap-3 sm:w-auto lg:mt-[26px] lg:h-[42px] lg:w-[242px] lg:gap-3 lg:px-0 lg:text-[17px]"
           >
             Start Hiring

@@ -33,8 +33,7 @@ const GUARANTEES: Guarantee[] = [
 
 /**
  * The short reassurance strip under the cost comparison: three icon rows in a
- * 220px band, split by two full-height hairlines, closed by the usual pair of
- * rules before the next chapter.
+ * 220px band, split by two full-height hairlines.
  */
 export function GuaranteeBand() {
   return (
@@ -42,7 +41,7 @@ export function GuaranteeBand() {
       <SectionDivider />
       <section
         aria-label="Hiring guarantees"
-        className="border-b border-hairline bg-white"
+        className="bg-white"
       >
         <Container>
           <ul className="grid grid-cols-1 divide-y divide-hairline lg:h-[220px] lg:grid-cols-3 lg:py-[27px] lg:divide-x lg:divide-y-0">
@@ -72,8 +71,7 @@ export function GuaranteeBand() {
           </ul>
         </Container>
       </section>
-      {/* 22px closing strip, as between every chapter in the reference. */}
-      <div aria-hidden className="h-[22px] w-full border-b border-hairline" />
+      <div aria-hidden className="h-[14px] w-full" />
     </>
   );
 }

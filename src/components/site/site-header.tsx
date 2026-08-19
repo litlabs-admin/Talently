@@ -16,7 +16,7 @@ import {
 import { NAV_LINKS } from "@/lib/nav";
 import { cn } from "@/lib/utils";
 
-export function SiteHeader() {
+export function SiteHeader({ solid: alwaysSolid = false }: { solid?: boolean } = {}) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -28,7 +28,7 @@ export function SiteHeader() {
   }, []);
 
   // Solid once scrolled, or whenever the mobile sheet is open.
-  const solid = scrolled || menuOpen;
+  const solid = alwaysSolid || scrolled || menuOpen;
 
   return (
     <header
@@ -64,7 +64,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden lg:block">
-          <ActionButton href="#book-a-call" className="lg:h-[46px] lg:gap-0.5 lg:px-9 lg:text-[18px]">
+          <ActionButton href="/contact" className="lg:h-[46px] lg:gap-0.5 lg:px-9 lg:text-[18px]">
             Speak to our Founder
             <ButtonArrow />
           </ActionButton>
@@ -106,7 +106,7 @@ export function SiteHeader() {
 
               <div className="mt-auto pt-10">
                 <ActionButton
-                  href="#book-a-call"
+                  href="/contact"
                   className="w-full gap-1"
                   onClick={() => setMenuOpen(false)}
                 >

@@ -39,12 +39,12 @@ export default function Home() {
         <Pricing />
         <EveryRole />
         <SectionDivider />
-        {/* The people and the founder read as one chapter: a narrower 65px
-            hairline band between them, not the usual 47px section divider. */}
+        {/* The people and the founder read as one chapter: a narrower band
+            between them than the usual section divider. */}
         <RealPeople />
         <div
           aria-hidden
-          className="h-8 w-full border-y border-hairline lg:h-[65px]"
+          className="h-5 w-full lg:h-[36px]"
         />
         <FounderTestimonial />
         <SectionDivider />

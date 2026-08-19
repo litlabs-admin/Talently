@@ -143,7 +143,7 @@ function PlanCard({ plan, delay }: { plan: Plan; delay: number }) {
         </p>
 
         <a
-          href="#contact"
+          href="/contact"
           className="mt-6 flex h-[48px] w-full max-w-[306px] items-center justify-center bg-ink text-[17px] leading-none font-bold text-white transition-opacity hover:opacity-90 lg:mt-[30px] lg:h-[50px] lg:text-[20px]"
         >
           Get Started

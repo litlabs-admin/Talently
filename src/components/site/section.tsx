@@ -1,14 +1,13 @@
 import { cn } from "@/lib/utils";
 
 /**
- * The full-bleed hairline band that separates every section in the reference:
- * two 1px rules ~47px apart.
+ * The full-bleed spacer band that separates every section.
  */
 export function SectionDivider() {
   return (
     <div
       aria-hidden
-      className="h-6 w-full border-y border-hairline lg:h-[47px]"
+      className="h-4 w-full lg:h-[28px]"
     />
   );
 }

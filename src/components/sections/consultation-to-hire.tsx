@@ -48,18 +48,11 @@ const STEPS: Step[] = [
   },
 ];
 
-/**
- * The reference stacks three hairlines between the dark chapter and this
- * section: the foot of the dark band, then two rules 43px apart.
- */
+/** Breathing room between the dark chapter and this section. */
 function StepsLeadIn() {
   return (
     <>
-      <div aria-hidden className="h-[22px] w-full lg:h-[44px]" />
-      <div
-        aria-hidden
-        className="h-6 w-full border-y border-hairline lg:h-[43px]"
-      />
+      <div aria-hidden className="h-6 w-full lg:h-[44px]" />
     </>
   );
 }
@@ -110,7 +103,7 @@ export function ConsultationToHire() {
             </p>
             <ActionButton
               variant="dark"
-              href="#book-a-call"
+              href="/contact"
               className="w-full gap-3 sm:w-auto lg:h-[62px] lg:w-[388px] lg:gap-3 lg:px-0 lg:text-[18px]"
             >
               Start Your Hiring Journey Today

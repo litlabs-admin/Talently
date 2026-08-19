@@ -84,7 +84,7 @@ export function PostCta() {
             className="mt-7 sm:mt-8 lg:mt-[37px]"
           >
             <Link
-              href="#book-a-call"
+              href="/contact"
               className="group inline-flex h-[52px] w-[240px] items-center justify-center gap-[10px] rounded-none bg-white text-[17px] font-semibold tracking-[-0.01em] text-ink transition-[background-color,transform] duration-200 ease-out hover:bg-white/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-[0.985] lg:h-[46px] lg:w-[272px] lg:text-[19px]"
             >
               Book a Call
