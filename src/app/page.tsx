@@ -15,6 +15,10 @@ import { RealPeople } from "@/components/sections/real-people";
 import { FounderTestimonial } from "@/components/sections/founder-testimonial";
 import { GrowingBusinesses } from "@/components/sections/growing-businesses";
 import { StillNotConvinced } from "@/components/sections/still-not-convinced";
+import { Testimonials } from "@/components/sections/testimonials";
+import { Faq } from "@/components/sections/faq";
+import { PostCta } from "@/components/sections/post-cta";
+import { SiteFooter } from "@/components/site/site-footer";
 
 export default function Home() {
   return (
@@ -48,7 +52,13 @@ export default function Home() {
         <SectionDivider />
         <StillNotConvinced />
         <SectionDivider />
+        <Testimonials />
+        <SectionDivider />
+        <Faq />
+        <SectionDivider />
+        <PostCta />
       </main>
+      <SiteFooter />
     </>
   );
 }
