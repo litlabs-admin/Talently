@@ -39,14 +39,14 @@ export function CompetitorComparison() {
     <Section
       id="comparison"
       aria-labelledby="comparison-heading"
-      className="scroll-mt-[64px] bg-white pt-16 pb-20 sm:pt-24 lg:scroll-mt-[74px] lg:pt-[92px] lg:pb-[138px]"
+      className="scroll-mt-[64px] bg-white pt-sec-sm pb-sec-sm lg:scroll-mt-[74px] lg:pt-sec-md lg:pb-sec-md"
     >
       <Container>
         <Reveal>
           {/* Serif display: bold upright, then the same face at regular. */}
           <h2
             id="comparison-heading"
-            className="text-center font-serif text-[34px] leading-[1.15] font-bold tracking-[-0.01em] text-ink sm:text-[42px] lg:text-[50px] lg:leading-[60px]"
+            className="text-center font-serif text-[28px] leading-[1.15] font-bold tracking-[-0.01em] text-ink sm:text-[34px] lg:text-display-lg"
           >
             Outperform.{" "}
             <span className="font-normal">Pay&nbsp;Less.</span>
@@ -61,15 +61,15 @@ export function CompetitorComparison() {
         </Reveal>
 
         {/* Table ------------------------------------------------------- */}
-        <Reveal delay={180} className="mt-10 sm:mt-14 lg:mt-[76px]">
+        <Reveal delay={180} className="mt-head-sm lg:mt-head-lg">
           {/* Controlled horizontal scroll below lg; never the page itself. */}
           <div className="-mx-5 overflow-x-auto px-5 sm:-mx-8 sm:px-8 lg:mx-0 lg:overflow-visible lg:px-0">
             <div
-              className="min-w-[840px] bg-surface pb-14 lg:min-w-0 lg:pb-[76px]"
+              className="min-w-[840px] bg-surface pb-10 lg:min-w-0 lg:pb-9"
             >
               {/* Header */}
               <div
-                className={`${GRID} h-[74px] items-center lg:h-[82px]`}
+                className={`${GRID} h-[74px] items-center lg:h-[68px]`}
               >
                 <div
                   className="pl-[24px] text-[18px] leading-none text-ink lg:pl-[32px] lg:text-[20px]"
@@ -100,7 +100,7 @@ export function CompetitorComparison() {
                   key={row.quality}
                   delay={80 + r * 70}
                   distance={12}
-                  className={`${GRID} h-[54px] items-stretch border-t border-[#b7b7b7] lg:h-[58px]`}
+                  className={`${GRID} h-[54px] items-stretch border-t border-[#b7b7b7] lg:h-[50px]`}
                 >
                   <div
                     className="flex items-center pr-4 pl-[24px] text-[16px] leading-[1.25] text-ink lg:pl-[32px] lg:text-[18px]"

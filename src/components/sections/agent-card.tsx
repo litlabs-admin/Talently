@@ -54,7 +54,7 @@ export function AgentCard({ agent }: { agent: Agent }) {
 
       {/* Name block. The badge bleeds right, so the row is not padded — the
           text half carries the inset instead. */}
-      <div className="mt-[24px] flex items-start justify-between gap-3 lg:mt-[41px]">
+      <div className="mt-[24px] flex items-start justify-between gap-3 lg:mt-[28px]">
         <div className="min-w-0 pl-[21px]">
           <p className="font-serif text-[16px] leading-[1.15] text-ink lg:text-[17px]">
             {agent.role}
@@ -76,13 +76,13 @@ export function AgentCard({ agent }: { agent: Agent }) {
         </p>
       </div>
 
-      <div className="mt-[30px] flex flex-col gap-[5.5px] pl-[21px] lg:mt-[48px]">
+      <div className="mt-[30px] flex flex-col gap-[5.5px] pl-[21px] lg:mt-[32px]">
         <ChipPill chip={chipA} className="w-[168px] lg:w-[178px]" />
         <ChipPill chip={chipB} className="w-[184px] lg:w-[194px]" />
       </div>
 
       {/* Foot: pinned so uneven copy above can never unalign the four CTAs. */}
-      <div className="mt-auto px-[21px] pt-[30px] lg:pt-[48px]">
+      <div className="mt-auto px-[21px] pt-[30px] lg:pt-8">
         <div aria-hidden className="h-px w-full bg-hairline" />
         <a
           href="/contact"

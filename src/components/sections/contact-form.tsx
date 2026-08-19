@@ -149,7 +149,7 @@ export function ContactForm() {
       }}
       className="w-full"
     >
-      <div className="grid grid-cols-1 gap-x-[52px] gap-y-[26px] sm:grid-cols-2 lg:gap-y-[38px]">
+      <div className="grid grid-cols-1 gap-x-[52px] gap-y-[26px] sm:grid-cols-2 lg:gap-y-[26px]">
         <div>
           <Label htmlFor={f("name")}>Name</Label>
           <input
@@ -214,7 +214,7 @@ export function ContactForm() {
         />
       </div>
 
-      <div className="mt-[26px] lg:mt-[38px]">
+      <div className="mt-[26px] lg:mt-[26px]">
         <Label htmlFor={f("details")}>Any additional details?</Label>
         <textarea
           id={f("details")}
@@ -225,7 +225,7 @@ export function ContactForm() {
         />
       </div>
 
-      <div className="mt-9 flex flex-col items-center lg:mt-[44px]">
+      <div className="mt-9 flex flex-col items-center lg:mt-8">
         <button
           type="submit"
           className="group inline-flex h-[52px] w-full max-w-[410px] items-center justify-center gap-2 rounded-none bg-ink text-[17px] font-semibold tracking-[-0.01em] text-white transition-[background-color,transform] duration-200 ease-out hover:bg-ink-warm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink active:scale-[0.985] lg:text-[19px]"
@@ -243,7 +243,7 @@ export function ContactForm() {
 
         <p
           aria-live="polite"
-          className="mt-[22px] text-center text-[15px] leading-[22px] font-semibold tracking-[-0.01em] text-ink lg:mt-[30px] lg:text-[17px]"
+          className="mt-[22px] text-center text-[15px] leading-[22px] font-semibold tracking-[-0.01em] text-ink lg:mt-[20px] lg:text-[17px]"
         >
           <LockIcon className="mr-2 inline-block size-[15px] shrink-0 translate-y-[2px] text-[#C9A227] lg:size-4" />
           {sent

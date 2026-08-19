@@ -45,7 +45,7 @@ export function Hero() {
             <h1
               id="hero-heading"
               style={{ "--d": "0.15s" } as React.CSSProperties}
-              className="tl-in mt-7 text-[40px] leading-[1.04] font-bold tracking-[-0.03em] text-white sm:text-[52px] lg:mt-[35px] lg:text-[60px] lg:leading-[63px] lg:tracking-[-0.03em]"
+              className="tl-in mt-7 text-[34px] leading-[1.06] font-bold tracking-[-0.03em] text-white sm:text-[44px] lg:mt-[35px] lg:text-display-xl lg:tracking-[-0.03em]"
             >
               Hire Top 2% <em className="display-serif">South</em>
               <br className="hidden lg:inline" />{" "}

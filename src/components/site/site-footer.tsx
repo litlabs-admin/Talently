@@ -37,7 +37,7 @@ export function SiteFooter() {
     <footer className="bg-black">
       <div className="mx-auto w-full max-w-[1341px] px-5 sm:px-10 lg:px-8">
         {/* Columns ---------------------------------------------------- */}
-        <div className="pt-[110px] pb-[52px] sm:pt-[140px] lg:px-14 lg:pt-[181px] lg:pb-[80px]">
+        <div className="pt-sec-lg pb-sec-sm lg:px-14 lg:pb-sec-md">
           <div className="grid grid-cols-2 gap-x-6 gap-y-11 md:gap-x-8 md:gap-y-14 lg:grid-cols-[636fr_295fr_234fr] lg:gap-x-0 lg:gap-y-0">
             {/* Brand */}
             <div className="col-span-2 lg:col-span-1">

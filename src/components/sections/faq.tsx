@@ -35,13 +35,11 @@ const FAQS: Faq[] = [
  * "Frequently asked questions".
  *
  * Geometry solved off Talantely-Landing_Page.png (2x export, values halved).
- * 860px between the hairline bands, on a 1220px column — narrower than the
- * usual 1288 body measure, and centred:
- *
- *   114  left-aligned display line, sans then an upright serif "questions"
- *   78   then the two columns: an 807px accordion, a 30px gutter, and a
- *        382px "more questions?" card that stretches to the list's height
- *   118  tail
+ * A 1220px column — narrower than the usual 1288 body measure, and centred:
+ * a left-aligned display line (sans, then an upright serif "questions"), then
+ * two columns: an 807px accordion, a 30px gutter, and a 382px "more
+ * questions?" card that stretches to the list's height. Vertical spacing comes
+ * from the shared section scale in globals.css.
  *
  * Accordion items are 70px tall closed, 6px radius, 1px #D0D0D0, on a 15px
  * rhythm; the open one grows to ~149 to carry two lines of 15/30 answer.
@@ -60,14 +58,14 @@ export function Faq() {
     <Section
       id="faq"
       aria-labelledby="faq-heading"
-      className="scroll-mt-[64px] bg-white pt-12 pb-14 sm:pt-16 sm:pb-20 lg:scroll-mt-[74px] lg:pt-[80px] lg:pb-[92px] xl:pt-[114px] xl:pb-[118px]"
+      className="scroll-mt-[64px] bg-white pt-sec-sm pb-sec-sm lg:scroll-mt-[74px] lg:pt-sec-md lg:pb-sec-md"
     >
       <Container>
         <div className="mx-auto w-full max-w-[1220px]">
           <Reveal distance={28}>
             <h2
               id="faq-heading"
-              className="text-[30px] leading-[1.14] font-bold tracking-[-0.025em] text-ink sm:text-[38px] lg:text-[46px] xl:text-[50px]"
+              className="text-[28px] leading-[1.14] font-bold tracking-[-0.025em] text-ink sm:text-[34px] lg:text-display-lg"
             >
               Frequently asked{" "}
               <span className="font-serif font-normal tracking-[-0.01em]">
@@ -76,7 +74,7 @@ export function Faq() {
             </h2>
           </Reveal>
 
-          <div className="mt-9 flex flex-col gap-8 sm:mt-11 lg:mt-[64px] lg:flex-row lg:items-stretch lg:gap-[30px] xl:mt-[78px]">
+          <div className="mt-head-sm flex flex-col gap-8 lg:mt-head-md lg:flex-row lg:items-stretch lg:gap-[30px]">
             {/* ---- the accordion ---------------------------------------- */}
             <ul className="flex flex-1 flex-col gap-[10px] lg:gap-[15px]">
               {FAQS.map((item, i) => {

@@ -41,7 +41,7 @@ export function StepCard({ step }: { step: Step }) {
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col px-[24px] pt-[28px] pb-[18px] lg:px-[20px] lg:pt-[42px] lg:pb-[19px] xl:pr-[35px] xl:pl-[27px]">
+      <div className="flex flex-1 flex-col px-[24px] pt-[28px] pb-[18px] lg:px-[20px] lg:pt-8 lg:pb-[19px] xl:pr-[35px] xl:pl-[27px]">
         <h3 className="font-serif text-[23px] leading-[1.1] font-normal text-ink lg:text-[25px]">
           {title}
         </h3>
@@ -51,7 +51,7 @@ export function StepCard({ step }: { step: Step }) {
         </p>
 
         {/* Hairline + duration chip, pinned to the foot of the panel. */}
-        <div className="mt-auto pt-[26px] lg:pt-[44px]">
+        <div className="mt-auto pt-[26px] lg:pt-7">
           <div aria-hidden className="h-px w-full bg-black/15" />
           <p className="mt-[21px] flex min-h-[39px] items-center justify-center gap-[11px] bg-white px-3 py-1.5 text-center text-[19px] leading-[1.2] font-bold tracking-[-0.01em] text-ink lg:text-[17px] xl:text-[21px]">
             <ThinArrow className="size-[14px] shrink-0" />

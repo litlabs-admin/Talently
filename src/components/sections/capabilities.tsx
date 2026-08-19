@@ -1,6 +1,6 @@
 import { Container } from "@/components/site/container";
 import { Reveal } from "@/components/site/reveal";
-import { Section, SectionDivider } from "@/components/site/section";
+import { Section } from "@/components/site/section";
 import { SectionHeading } from "@/components/site/section-heading";
 import {
   CapabilityCard,
@@ -67,37 +67,34 @@ const CAPABILITIES: Capability[] = [
 
 export function Capabilities() {
   return (
-    <>
-      <SectionDivider />
-      <Section
-        id="roles"
-        aria-labelledby="capabilities-heading"
-        className="scroll-mt-[64px] bg-white pt-10 pb-16 lg:scroll-mt-[74px] lg:pt-9 lg:pb-[148px]"
-      >
-        <Container>
-          <Reveal>
-            <SectionHeading
-              id="capabilities-heading"
-              lead="What your Talently"
-              accent="Hire can do for you."
-            />
-          </Reveal>
+    <Section
+      id="roles"
+      aria-labelledby="capabilities-heading"
+      className="scroll-mt-[64px] bg-white pt-sec-sm pb-sec-sm lg:scroll-mt-[74px] lg:pt-sec-xs lg:pb-sec-md"
+    >
+      <Container>
+        <Reveal>
+          <SectionHeading
+            id="capabilities-heading"
+            lead="What your Talently"
+            accent="Hire can do for you."
+          />
+        </Reveal>
 
-          {/* Flush 3-up: no gutter, matching the reference. */}
-          <ul className="mt-9 grid grid-cols-1 sm:grid-cols-2 lg:mt-[45px] lg:grid-cols-3">
-            {CAPABILITIES.map((capability, i) => (
-              <Reveal
-                as="li"
-                key={capability.title}
-                delay={140 + i * 130}
-                className="flex"
-              >
-                <CapabilityCard capability={capability} />
-              </Reveal>
-            ))}
-          </ul>
-        </Container>
-      </Section>
-    </>
+        {/* Flush 3-up: no gutter, matching the reference. */}
+        <ul className="mt-head-sm grid grid-cols-1 sm:grid-cols-2 lg:mt-head-md lg:grid-cols-3">
+          {CAPABILITIES.map((capability, i) => (
+            <Reveal
+              as="li"
+              key={capability.title}
+              delay={140 + i * 130}
+              className="flex"
+            >
+              <CapabilityCard capability={capability} />
+            </Reveal>
+          ))}
+        </ul>
+      </Container>
+    </Section>
   );
 }

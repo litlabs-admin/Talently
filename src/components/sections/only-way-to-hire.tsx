@@ -91,7 +91,7 @@ export function OnlyWayToHire() {
     <section
       id="why-talently"
       aria-labelledby="only-way-heading"
-      className="scroll-mt-[64px] pt-16 sm:pt-20 lg:scroll-mt-[74px] lg:pt-[70px]"
+      className="scroll-mt-[64px] pt-sec-lg lg:scroll-mt-[74px] lg:pt-sec-md"
     >
       <DarkContainer>
         {/* Header: 52/63 display on the left, a short qualifier parked on the
@@ -101,7 +101,7 @@ export function OnlyWayToHire() {
           <Reveal className="lg:max-w-[800px] lg:min-w-0">
             <h2
               id="only-way-heading"
-              className="text-[34px] leading-[1.1] font-bold tracking-[-0.03em] text-white sm:text-[44px] lg:leading-[54px] xl:text-[52px] xl:leading-[63px]"
+              className="text-[28px] leading-[1.1] font-bold tracking-[-0.03em] text-white sm:text-[34px] lg:text-display-lg"
             >
               The Only Way to Hire
               <br />
@@ -123,7 +123,7 @@ export function OnlyWayToHire() {
         </div>
 
         {/* 3-up photographic grid, 39px gutter. */}
-        <ul className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-5 lg:mt-[81px] lg:grid-cols-3 lg:gap-x-[39px] lg:gap-y-[34px]">
+        <ul className="mt-head-sm grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-5 lg:mt-head-md lg:grid-cols-3 lg:gap-x-[39px] lg:gap-y-[24px]">
           {PROOFS.map((proof, i) => (
             <Reveal
               as="li"
@@ -137,7 +137,7 @@ export function OnlyWayToHire() {
         </ul>
 
         {/* Rule — button — rule. */}
-        <Reveal delay={120} className="mt-14 lg:mt-[86px]">
+        <Reveal delay={120} className="mt-head-sm lg:mt-sec-xs">
           <div className="flex items-center gap-[27px]">
             <span aria-hidden className="hidden h-px flex-1 bg-white/25 sm:block" />
             <a

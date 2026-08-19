@@ -77,28 +77,26 @@ const AGENTS: Agent[] = [
 /**
  * "Real People, Ready to Start".
  *
- * 933px between hairlines on the reference. The head is a two-column split on
- * the 1288 body column — a 52/56 display at the usual 52px heading inset, and
+ * The head is a two-column split on the 1288 body column — a 52/56 display at the usual 52px heading inset, and
  * a 560-wide copy block starting at 667 — then the four 313-wide cards run
  * edge to edge on the same 12.5px gutter the step cards use.
  *
- *   58     heading / intro copy (both first lines start on the same y)
- *   265.5  the four cards, 532.5 tall
- *   798    135 of tail before the closing hairline
+ * The heading and the intro copy start on the same y; the four cards below
+ * run 532.5 tall.
  */
 export function RealPeople() {
   return (
     <Section
       id="real-people"
       aria-labelledby="real-people-heading"
-      className="scroll-mt-[64px] bg-white pt-11 pb-14 sm:pt-14 lg:scroll-mt-[74px] lg:pt-[58px] lg:pb-[135px]"
+      className="scroll-mt-[64px] bg-white pt-sec-sm pb-sec-xs lg:scroll-mt-[74px] lg:pt-sec-md"
     >
       <Container>
         <div className="lg:grid lg:grid-cols-[667px_1fr]">
           <Reveal>
             <h2
               id="real-people-heading"
-              className="text-[34px] leading-[1.08] font-bold tracking-[-0.03em] text-ink sm:text-[42px] lg:pl-[54px] lg:text-[52px] lg:leading-[56px]"
+              className="text-[28px] leading-[1.08] font-bold tracking-[-0.03em] text-ink sm:text-[34px] lg:pl-[54px] lg:text-display-lg"
             >
               Real People,
               <br />
@@ -130,7 +128,7 @@ export function RealPeople() {
           </Reveal>
         </div>
 
-        <ul className="mt-12 grid grid-cols-1 gap-[12.5px] sm:grid-cols-2 lg:mt-[96px] lg:grid-cols-4">
+        <ul className="mt-head-sm grid grid-cols-1 gap-[12.5px] sm:grid-cols-2 lg:mt-head-lg lg:grid-cols-4">
           {AGENTS.map((agent, i) => (
             <Reveal
               as="li"

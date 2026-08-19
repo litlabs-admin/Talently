@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { Container } from "@/components/site/container";
 import { Reveal } from "@/components/site/reveal";
-import { Section, SectionDivider } from "@/components/site/section";
+import { Section } from "@/components/site/section";
 import { cn } from "@/lib/utils";
 
 type Plan = {
@@ -50,52 +50,48 @@ const PLANS: Plan[] = [
  *
  * Geometry solved off Talantely-Landing_Page.png (2x export, so design px are
  * the measured values halved): the pair of cards runs 1237px wide — two 596px
- * columns on a 45px gutter, 25px inside the 1288px body column — each 640px
- * tall with 64px side padding. The plain plan is a flat #f4f4f4 panel; the
+ * columns on a 45px gutter, 25px inside the 1288px body column, 64px side
+ * padding, height set by the content. The plain plan is a flat #f4f4f4 panel; the
  * featured one is white inside a 1px rule, with the gradient plate hung off
  * its top-right corner (325x76, flush right, 21px proud of the top edge) so it
  * eats the border rather than sitting on top of it.
  *
- * Section runs 1050px between the hairlines — a hair over one 900px viewport,
- * which is what the reference does, so it isn't squeezed to fit.
+ * Vertical spacing comes from the shared section scale in globals.css.
  */
 export function Pricing() {
   return (
-    <>
-      <SectionDivider />
-      <Section
-        id="pricing"
-        aria-labelledby="pricing-heading"
-        className="scroll-mt-[64px] bg-white pt-12 pb-14 sm:pt-16 sm:pb-20 lg:scroll-mt-[74px] lg:pt-[66px] lg:pb-[76px]"
-      >
-        <Container>
-          <Reveal>
-            <h2
-              id="pricing-heading"
-              className="text-center text-[30px] leading-[1.2] font-bold tracking-[-0.015em] text-ink sm:text-[40px] lg:text-[50px] lg:leading-[66px]"
-            >
-              No Charge Until You Find a{" "}
-              <span className="block font-serif text-[0.94em] font-bold tracking-[0]">
-                Candidate You Like
-              </span>
-            </h2>
-          </Reveal>
+    <Section
+      id="pricing"
+      aria-labelledby="pricing-heading"
+      className="scroll-mt-[64px] bg-white pt-sec-sm pb-sec-sm lg:scroll-mt-[74px] lg:pt-sec-md lg:pb-sec-md"
+    >
+      <Container>
+        <Reveal>
+          <h2
+            id="pricing-heading"
+            className="text-center text-[28px] leading-[1.2] font-bold tracking-[-0.015em] text-ink sm:text-[34px] lg:text-display-lg"
+          >
+            No Charge Until You Find a{" "}
+            <span className="block font-serif text-[0.94em] font-bold tracking-[0]">
+              Candidate You Like
+            </span>
+          </h2>
+        </Reveal>
 
-          <Reveal delay={110}>
-            <p className="mx-auto mt-3 max-w-[720px] text-center text-[15px] leading-[1.45] text-ink sm:text-[16px] lg:mt-[20px] lg:text-[18px] lg:leading-[24px]">
-              Two ways to work with us, pick whichever fits how you want to
-              manage payroll.
-            </p>
-          </Reveal>
+        <Reveal delay={110}>
+          <p className="mx-auto mt-3 max-w-[720px] text-center text-[15px] leading-[1.45] text-ink sm:text-[16px] lg:mt-[20px] lg:text-[18px] lg:leading-[24px]">
+            Two ways to work with us, pick whichever fits how you want to
+            manage payroll.
+          </p>
+        </Reveal>
 
-          <div className="mx-auto mt-10 grid max-w-[560px] grid-cols-1 gap-8 sm:mt-14 sm:gap-10 lg:mt-[69px] lg:max-w-[1237px] lg:grid-cols-2 lg:gap-[45px]">
-            {PLANS.map((plan, i) => (
-              <PlanCard key={plan.name} plan={plan} delay={180 + i * 140} />
-            ))}
-          </div>
-        </Container>
-      </Section>
-    </>
+        <div className="mx-auto mt-head-sm grid max-w-[560px] grid-cols-1 gap-8 sm:gap-10 lg:mt-head-md lg:max-w-[1237px] lg:grid-cols-2 lg:gap-[45px]">
+          {PLANS.map((plan, i) => (
+            <PlanCard key={plan.name} plan={plan} delay={180 + i * 140} />
+          ))}
+        </div>
+      </Container>
+    </Section>
   );
 }
 
@@ -112,9 +108,8 @@ function PlanCard({ plan, delay }: { plan: Plan; delay: number }) {
     >
       <div
         className={cn(
-          "relative flex h-full flex-col px-7 pt-9 pb-9 sm:px-10 lg:px-[64px] lg:pt-[52px] lg:pb-[53px]",
+          "relative flex h-full flex-col px-7 pt-9 pb-9 sm:px-10 lg:px-[64px] lg:pt-7 lg:pb-7",
           featured ? "border border-ink bg-white" : "bg-surface",
-          "lg:min-h-[640px]",
         )}
       >
         {featured && <MostPopularPlate />}
@@ -144,16 +139,16 @@ function PlanCard({ plan, delay }: { plan: Plan; delay: number }) {
 
         <a
           href="/contact"
-          className="mt-6 flex h-[48px] w-full max-w-[306px] items-center justify-center bg-ink text-[17px] leading-none font-bold text-white transition-opacity hover:opacity-90 lg:mt-[30px] lg:h-[50px] lg:text-[20px]"
+          className="mt-6 flex h-[48px] w-full max-w-[306px] items-center justify-center bg-ink text-[17px] leading-none font-bold text-white transition-opacity hover:opacity-90 lg:mt-[20px] lg:h-[50px] lg:text-[20px]"
         >
           Get Started
         </a>
 
-        <ul className="mt-8 lg:mt-[43px]">
+        <ul className="mt-8 lg:mt-[28px]">
           {plan.features.map((feature) => (
             <li
               key={feature}
-              className="flex items-center gap-[16px] border-t border-hairline py-4 text-[15px] leading-[1.35] text-ink lg:h-[69px] lg:gap-[22px] lg:py-0 lg:text-[17px]"
+              className="flex items-center gap-[16px] border-t border-hairline py-4 text-[15px] leading-[1.35] text-ink lg:h-[54px] lg:gap-[22px] lg:py-0 lg:text-[17px]"
             >
               <ArrowRight className="w-[14px] shrink-0 text-ink" />
               {feature}

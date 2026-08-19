@@ -1,4 +1,3 @@
-import { SectionDivider } from "@/components/site/section";
 import { SiteHeader } from "@/components/site/site-header";
 import { Hero } from "@/components/sections/hero";
 import { Capabilities } from "@/components/sections/capabilities";
@@ -38,24 +37,14 @@ export default function Home() {
         <CompetitorComparison />
         <Pricing />
         <EveryRole />
-        <SectionDivider />
-        {/* The people and the founder read as one chapter: a narrower band
-            between them than the usual section divider. */}
+        {/* The people and the founder read as one chapter: they meet on a
+            tighter seam than the usual section gap. */}
         <RealPeople />
-        <div
-          aria-hidden
-          className="h-5 w-full lg:h-[36px]"
-        />
         <FounderTestimonial />
-        <SectionDivider />
         <GrowingBusinesses />
-        <SectionDivider />
         <StillNotConvinced />
-        <SectionDivider />
         <Testimonials />
-        <SectionDivider />
         <Faq />
-        <SectionDivider />
         <PostCta />
       </main>
       <SiteFooter />

@@ -48,70 +48,58 @@ const STEPS: Step[] = [
   },
 ];
 
-/** Breathing room between the dark chapter and this section. */
-function StepsLeadIn() {
-  return (
-    <>
-      <div aria-hidden className="h-6 w-full lg:h-[44px]" />
-    </>
-  );
-}
-
 export function ConsultationToHire() {
   return (
-    <>
-      <StepsLeadIn />
-      <Section
-        id="how-it-works"
-        aria-labelledby="steps-heading"
-        className="scroll-mt-[64px] bg-white pt-12 pb-16 sm:pt-16 lg:scroll-mt-[74px] lg:pt-[51px] lg:pb-[124px]"
-      >
-        <Container>
-          <Reveal>
-            {/* 52/61 display — a touch tighter than the dark chapter's 52/63. */}
-            <h2
-              id="steps-heading"
-              className="text-[34px] leading-[1.1] font-bold tracking-[-0.03em] text-ink sm:text-[44px] lg:leading-[54px] xl:text-[52px] xl:leading-[61px]"
-            >
-              From Consultation
-              <br />
-              to Hire, <em className="display-serif-md">in just 2 weeks.</em>
-            </h2>
-          </Reveal>
-
-          {/* Four columns, 12.5px gutter — the panels almost touch. */}
-          <ol className="mt-11 grid grid-cols-1 gap-[12.5px] sm:grid-cols-2 lg:mt-[107px] lg:grid-cols-4">
-            {STEPS.map((step, i) => (
-              <Reveal
-                as="li"
-                key={step.number}
-                delay={120 + i * 140}
-                className="flex"
-              >
-                <StepCard step={step} />
-              </Reveal>
-            ))}
-          </ol>
-
-          {/* Closing line and CTA, centred as one 888px group. */}
-          <Reveal
-            delay={180}
-            className="mt-12 flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-[33px] lg:mt-[98px]"
+    <Section
+      id="how-it-works"
+      aria-labelledby="steps-heading"
+      className="scroll-mt-[64px] bg-white pt-sec-sm pb-sec-sm lg:scroll-mt-[74px] lg:pt-sec-md lg:pb-sec-md"
+    >
+      <Container>
+        <Reveal>
+          {/* 52/61 display — a touch tighter than the dark chapter's 52/63. */}
+          <h2
+            id="steps-heading"
+            className="text-[28px] leading-[1.1] font-bold tracking-[-0.03em] text-ink sm:text-[34px] lg:text-display-lg"
           >
-            <p className="max-w-[470px] text-center text-[17px] leading-[1.4] text-ink sm:text-left lg:text-[18px]">
-              Start working with your new hire in as little as 2 weeks.
-            </p>
-            <ActionButton
-              variant="dark"
-              href="/contact"
-              className="w-full gap-3 sm:w-auto lg:h-[62px] lg:w-[388px] lg:gap-3 lg:px-0 lg:text-[18px]"
+            From Consultation
+            <br />
+            to Hire, <em className="display-serif-md">in just 2 weeks.</em>
+          </h2>
+        </Reveal>
+
+        {/* Four columns, 12.5px gutter — the panels almost touch. */}
+        <ol className="mt-head-sm grid grid-cols-1 gap-[12.5px] sm:grid-cols-2 lg:mt-head-lg lg:grid-cols-4">
+          {STEPS.map((step, i) => (
+            <Reveal
+              as="li"
+              key={step.number}
+              delay={120 + i * 140}
+              className="flex"
             >
-              Start Your Hiring Journey Today
-              <RocketIcon className="size-[20px] shrink-0" />
-            </ActionButton>
-          </Reveal>
-        </Container>
-      </Section>
-    </>
+              <StepCard step={step} />
+            </Reveal>
+          ))}
+        </ol>
+
+        {/* Closing line and CTA, centred as one 888px group. */}
+        <Reveal
+          delay={180}
+          className="mt-head-sm flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-[33px] lg:mt-head-md"
+        >
+          <p className="max-w-[470px] text-center text-[17px] leading-[1.4] text-ink sm:text-left lg:text-[18px]">
+            Start working with your new hire in as little as 2 weeks.
+          </p>
+          <ActionButton
+            variant="dark"
+            href="/contact"
+            className="w-full gap-3 sm:w-auto lg:h-[62px] lg:w-[388px] lg:gap-3 lg:px-0 lg:text-[18px]"
+          >
+            Start Your Hiring Journey Today
+            <RocketIcon className="size-[20px] shrink-0" />
+          </ActionButton>
+        </Reveal>
+      </Container>
+    </Section>
   );
 }

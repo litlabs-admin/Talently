@@ -150,6 +150,30 @@
   /* Text */
   --color-body: #3a3a3a;
   --color-muted: #6b6b6b;
+
+  /* Vertical rhythm. One scale for every gap between blocks — section
+     padding and heading -> content. Card internals keep their own traced
+     values. Sections carry all the space between them; there are no spacer
+     bands. */
+  --spacing-sec-xs: 2rem; /* 32  edge where two sections read as one chapter */
+  --spacing-sec-sm: 2.5rem; /* 40  section padding, mobile */
+  --spacing-sec-md: 3.5rem; /* 56  section padding, desktop (default) */
+  --spacing-sec-lg: 5rem; /* 80  chapter openers: dark band, post-CTA, footer */
+
+  --spacing-head-sm: 2rem; /* 32  heading -> content, mobile */
+  --spacing-head-md: 3rem; /* 48  heading -> content, desktop */
+  --spacing-head-lg: 4rem; /* 64  heading -> content before a large grid */
+
+  /* Display type. Four steps, one per role — the serif accent lines are sized
+     in em (see .display-serif*), so they follow whatever step they sit in. */
+  --text-display-xl: 3rem; /* 48  hero h1 */
+  --text-display-xl--line-height: 1.08;
+  --text-display-lg: 2.5rem; /* 40  section h2 */
+  --text-display-lg--line-height: 1.12;
+  --text-display-md: 2rem; /* 32  CTA banners over imagery */
+  --text-display-md--line-height: 1.2;
+  --text-display-sm: 1.625rem; /* 26  founder pull-quote */
+  --text-display-sm--line-height: 1.08;
 }
 
 :root {

@@ -23,8 +23,8 @@ export function SectionHeading({
     <h2
       id={id}
       className={cn(
-        "text-[32px] leading-[1.12] font-bold tracking-[-0.03em] text-ink",
-        "sm:text-[42px] lg:text-[52px] lg:leading-[60px]",
+        "text-[28px] leading-[1.12] font-bold tracking-[-0.03em] text-ink",
+        "sm:text-[34px] lg:text-display-lg",
         className,
       )}
     >

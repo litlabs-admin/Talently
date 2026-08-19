@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { Container } from "@/components/site/container";
 import { Reveal } from "@/components/site/reveal";
-import { Section, SectionDivider } from "@/components/site/section";
+import { Section } from "@/components/site/section";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { PostCta } from "@/components/sections/post-cta";
@@ -31,7 +31,7 @@ export default function ContactPage() {
           aria-labelledby="contact-heading"
           className="bg-white"
         >
-          <Container className="pt-9 pb-12 sm:pt-12 lg:pt-[46px] lg:pb-[70px]">
+          <Container className="pt-sec-sm pb-sec-sm lg:pt-sec-md lg:pb-sec-md">
             {/* 875 / 45 / 368 — the heading block sits on row 1, the form
                 and the crop share row 2 so the image top rides 14px above the
                 first field label and its foot lands with the form's. */}
@@ -50,7 +50,7 @@ export default function ContactPage() {
                   <Reveal delay={90} className="min-w-0">
                     <h1
                       id="contact-heading"
-                      className="text-[34px] leading-[1.08] font-bold tracking-[-0.03em] text-ink sm:text-[42px] lg:text-[52px] lg:leading-[64px] lg:tracking-[-0.035em] lg:whitespace-nowrap"
+                      className="text-[28px] leading-[1.08] font-bold tracking-[-0.03em] text-ink sm:text-[34px] lg:text-display-lg lg:tracking-[-0.035em] lg:whitespace-nowrap"
                     >
                       Let&rsquo;s find your next
                       <br />
@@ -73,7 +73,7 @@ export default function ContactPage() {
 
               <Reveal
                 delay={260}
-                className="mt-10 min-w-0 lg:col-start-1 lg:row-start-2 lg:mt-[75px]"
+                className="mt-head-sm min-w-0 lg:col-start-1 lg:row-start-2 lg:mt-sec-xs"
               >
                 <ContactForm />
               </Reveal>
@@ -83,7 +83,7 @@ export default function ContactPage() {
               <Reveal
                 delay={340}
                 distance={20}
-                className="mt-10 min-w-0 lg:col-start-2 lg:row-start-2 lg:mt-[75px]"
+                className="mt-head-sm min-w-0 lg:col-start-2 lg:row-start-2 lg:mt-sec-xs"
               >
                 <div className="relative h-[300px] w-full overflow-hidden sm:h-[420px] lg:-mt-[14px] lg:h-[calc(100%+14px)] lg:min-h-[627px]">
                   <Image
@@ -100,7 +100,6 @@ export default function ContactPage() {
           </Container>
         </Section>
 
-        <SectionDivider />
         <PostCta />
       </main>
       <SiteFooter />

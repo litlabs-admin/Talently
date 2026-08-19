@@ -6,10 +6,10 @@ import { Section } from "@/components/site/section";
 
 /**
  * "Hear It From Our Founder" — the closing half of the "Real People" chapter,
- * which is why it shares that section's white ground and is separated from it
- * by a 65px hairline band rather than the usual 47px divider.
+ * which is why it shares that section's white ground and meets it on the
+ * tighter sec-xs seam rather than a full section gap.
  *
- * 779px between hairlines. On the 1288 body column:
+ * On the 1288 body column:
  *
  *   left   68.5 -> 635.5   the founder portrait, 567 x 648.5 (7:8, the source
  *                          asset uncropped), top edge at 65.5
@@ -18,14 +18,14 @@ import { Section } from "@/components/site/section";
  *                          green field
  *
  *   133  eyebrow / 178 quote glyph / 237 the 30/31 display / 330 body copy
- *   568  attribution, then 65 of tail under the photo
+ *   568  attribution
  */
 export function FounderTestimonial() {
   return (
     <Section
       id="founder"
       aria-labelledby="founder-heading"
-      className="scroll-mt-[64px] bg-white pt-12 pb-14 sm:pt-14 lg:scroll-mt-[74px] lg:pt-[65px] lg:pb-[65px]"
+      className="scroll-mt-[64px] bg-white pt-sec-xs pb-sec-sm lg:scroll-mt-[74px] lg:pb-sec-md"
     >
       <Container>
         <div className="sm:grid sm:grid-cols-2 sm:items-start sm:gap-x-10 lg:grid-cols-[635.5px_1fr] lg:gap-x-[77px]">
@@ -61,7 +61,7 @@ export function FounderTestimonial() {
               <blockquote>
                 <h2
                   id="founder-heading"
-                  className="mt-[14px] text-[26px] leading-[1.06] font-bold tracking-[-0.025em] text-ink lg:mt-[11px] lg:text-[30px] lg:leading-[31px]"
+                  className="mt-[14px] text-[24px] leading-[1.06] font-bold tracking-[-0.025em] text-ink lg:mt-[11px] lg:text-display-sm"
                 >
                   Built by someone who felt
                   <br />

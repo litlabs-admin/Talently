@@ -36,13 +36,12 @@ const SEGMENTS: Segment[] = [
  * "Built for Growing Businesses".
  *
  * Geometry solved off Talantely-Landing_Page.png (2x export, values halved).
- * 663px between the hairline bands, on the usual 1288px body column:
+ * On the usual 1288px body column:
  *
- *   44   centred heading, 50/62 — the same display step as "Every Role You"
- *   44   then three 420.5 x 245 photos on a 13.75px gutter (1289 total)
+ *   centred heading, 50/62 — the same display step as "Every Role You"
+ *   then three 420.5 x 245 photos on a 13.75px gutter (1289 total)
  *   15   title 26/32
  *   21   body 15/23, two lines, wrapping naturally inside the column
- *   154  tail
  *
  * The photos are the reference's 1.716 crop, which is the source asset's own
  * aspect — so they are used whole: no radius, no border, no frame, no card.
@@ -54,19 +53,19 @@ export function GrowingBusinesses() {
     <Section
       id="who-its-for"
       aria-labelledby="growing-heading"
-      className="scroll-mt-[64px] bg-white pt-10 pb-16 sm:pt-12 sm:pb-20 lg:scroll-mt-[74px] lg:pt-[44px] lg:pb-[154px]"
+      className="scroll-mt-[64px] bg-white pt-sec-sm pb-sec-sm lg:scroll-mt-[74px] lg:pt-sec-md lg:pb-sec-md"
     >
       <Container>
         <Reveal distance={28}>
           <h2
             id="growing-heading"
-            className="text-center text-[32px] leading-[1.12] font-bold tracking-[-0.025em] text-ink sm:text-[40px] lg:text-[50px] lg:leading-[62px] lg:tracking-[-0.02em]"
+            className="text-center text-[28px] leading-[1.12] font-bold tracking-[-0.025em] text-ink sm:text-[34px] lg:text-display-lg lg:tracking-[-0.02em]"
           >
             Built for Growing Businesses
           </h2>
         </Reveal>
 
-        <ul className="mt-9 grid grid-cols-1 gap-x-[13.75px] gap-y-10 sm:mt-10 md:grid-cols-3 md:gap-y-0 lg:mt-[44px]">
+        <ul className="mt-head-sm grid grid-cols-1 gap-x-[13.75px] gap-y-10 md:grid-cols-3 md:gap-y-0 lg:mt-head-md">
           {SEGMENTS.map((segment, i) => (
             <Reveal
               as="li"

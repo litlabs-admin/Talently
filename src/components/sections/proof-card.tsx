@@ -17,8 +17,8 @@ export type Proof = {
 /**
  * A photographic tile from the "The Only Way to Hire" grid.
  *
- * Measured off the reference (2x export, halved): 367 x 338, content inset
- * 30 left / 78 right, hairlines above and below the stat block, and the stat
+ * Content inset 30 left / 78 right, hairlines above and below the stat
+ * block, and the stat
  * block pinned to the foot so all six cards line up regardless of how many
  * lines the body copy runs to.
  */
@@ -26,7 +26,7 @@ export function ProofCard({ proof }: { proof: Proof }) {
   const { label, title, body, stat, statCaption, icon: Icon, image } = proof;
 
   return (
-    <article className="relative isolate flex min-h-[300px] w-full flex-col overflow-hidden bg-ink-warm pt-[26px] pr-[26px] pb-[30px] pl-[26px] sm:min-h-[330px] lg:min-h-[356px] lg:pt-8 lg:pr-[34px] lg:pb-[39px] lg:pl-[30px] xl:aspect-[367/338] xl:min-h-0 xl:pr-[78px]">
+    <article className="relative isolate flex min-h-[300px] w-full flex-col overflow-hidden bg-ink-warm pt-[26px] pr-[26px] pb-[30px] pl-[26px] sm:min-h-[330px] lg:min-h-[256px] lg:pt-6 lg:pr-[34px] lg:pb-6 lg:pl-[30px] xl:aspect-[367/248] xl:min-h-0 xl:pr-[78px]">
       <Image
         src={image.src}
         alt={image.alt}
@@ -44,19 +44,19 @@ export function ProofCard({ proof }: { proof: Proof }) {
         <span aria-hidden className="h-px flex-1 bg-white/45" />
       </div>
 
-      <h3 className="mt-[26px] text-[21px] leading-[1.15] font-bold tracking-[-0.02em] text-white lg:mt-[33px] lg:text-[25px]">
+      <h3 className="mt-[20px] text-[21px] leading-[1.15] font-bold tracking-[-0.02em] text-white lg:mt-[18px] lg:text-[25px]">
         {title}
       </h3>
 
-      <p className="mt-[14px] text-[13.5px] leading-[18px] text-white/95 lg:mt-[18px] lg:text-[14px]">
+      <p className="mt-[14px] text-[13.5px] leading-[18px] text-white/95 lg:mt-[12px] lg:text-[14px]">
         {body}
       </p>
 
       {/* Stat block — hairline, figure, caption, hairline. Pinned to the foot. */}
-      <div className="mt-auto pt-[26px]">
+      <div className="mt-auto pt-[16px]">
         <div aria-hidden className="h-px w-full bg-white/40" />
 
-        <div className="mt-[18px] flex items-start gap-[14px] lg:mt-[20px]">
+        <div className="mt-[14px] flex items-start gap-[14px] lg:mt-[12px]">
           <ThinArrow className="mt-[14px] size-[17px] shrink-0 text-white lg:mt-[16px]" />
           <div>
             <p className="text-[34px] leading-[1.02] font-bold tracking-[-0.025em] text-white lg:text-[42px]">
@@ -68,7 +68,7 @@ export function ProofCard({ proof }: { proof: Proof }) {
           </div>
         </div>
 
-        <div aria-hidden className="mt-[18px] h-px w-full bg-white/40 lg:mt-[22px]" />
+        <div aria-hidden className="mt-[14px] h-px w-full bg-white/40 lg:mt-[12px]" />
       </div>
     </article>
   );

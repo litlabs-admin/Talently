@@ -42,12 +42,11 @@ const TESTIMONIALS: Testimonial[] = [
  * "Companies Building Faster / With Talently".
  *
  * Geometry solved off Talantely-Landing_Page.png (2x export, values halved).
- * 795px between the hairline bands, on the usual 1288px body column:
+ * On the usual 1288px body column:
  *
- *   46   centred two-line display — sans, then an *upright* serif line
- *        (0.81em, not the italic used everywhere else on the page)
- *   70   then three 420 x 447 plates
- *   140  tail
+ *   a centred two-line display — sans, then an *upright* serif line
+ *   (0.81em, not the italic used everywhere else on the page)
+ *   then three 420 x 447 plates
  *
  * Each plate is a flat #F1F1F1 field — square corners, no radius, no shadow —
  * with the review itself floated inside it as a 368 x 320 hairline box, inset
@@ -67,13 +66,13 @@ export function Testimonials() {
     <Section
       id="testimonials"
       aria-labelledby="testimonials-heading"
-      className="scroll-mt-[64px] bg-white pt-10 pb-16 sm:pt-12 sm:pb-20 lg:scroll-mt-[74px] lg:pt-[46px] lg:pb-[110px] xl:pb-[140px]"
+      className="scroll-mt-[64px] bg-white pt-sec-sm pb-sec-sm lg:scroll-mt-[74px] lg:pt-sec-md lg:pb-sec-md"
     >
       <Container>
         <Reveal distance={28}>
           <h2
             id="testimonials-heading"
-            className="text-center text-[30px] leading-[1.14] font-bold tracking-[-0.025em] text-ink sm:text-[38px] lg:text-[46px] lg:leading-[44px] xl:text-[50px] xl:leading-[46px]"
+            className="text-center text-[28px] leading-[1.14] font-bold tracking-[-0.025em] text-ink sm:text-[34px] lg:text-display-lg xl:leading-[46px]"
           >
             Companies Building Faster
             <span className="mt-1 block font-serif text-[0.88em] font-normal tracking-[-0.01em] lg:mt-0">
@@ -82,7 +81,7 @@ export function Testimonials() {
           </h2>
         </Reveal>
 
-        <ul className="mx-auto mt-9 grid max-w-[440px] grid-cols-1 gap-[14px] sm:mt-11 md:max-w-none md:grid-cols-3 lg:mt-[60px] xl:mt-[70px]">
+        <ul className="mx-auto mt-head-sm grid max-w-[440px] grid-cols-1 gap-[14px] md:max-w-none md:grid-cols-3 lg:mt-head-md">
           {TESTIMONIALS.map((t, i) => (
             <Reveal
               as="li"

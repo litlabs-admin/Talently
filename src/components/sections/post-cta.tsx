@@ -31,7 +31,7 @@ function PhoneIcon({ className }: { className?: string }) {
  */
 export function PostCta() {
   return (
-    <section id="post-cta" className="relative bg-white pt-10 sm:pt-14 lg:pt-[75px]">
+    <section id="post-cta" className="relative bg-white pt-sec-sm lg:pt-sec-lg">
       {/* The black the card sinks into — the footer's band, started early. */}
       <div
         aria-hidden
@@ -60,7 +60,7 @@ export function PostCta() {
             rootMargin="0px 0px -6% 0px"
             className="mt-5 sm:mt-7 lg:mt-[42px]"
           >
-            <h2 className="text-[28px] leading-[1.12] font-bold tracking-[-0.03em] text-white sm:text-[34px] lg:text-[43px]">
+            <h2 className="text-[24px] leading-[1.12] font-bold tracking-[-0.03em] text-white sm:text-[28px] lg:text-display-md">
               Ready to Build Your Dream Team?
             </h2>
           </Reveal>

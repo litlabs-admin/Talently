@@ -9,14 +9,10 @@ import { Section } from "@/components/site/section";
  * "Still Not Convinced?" — the closing CTA.
  *
  * Geometry solved off Talantely-Landing_Page.png (2x export, values halved).
- * 520px between the hairline bands:
- *
- *   47   top padding
- *   417  the banner: 1212.5 wide, 2.906:1 — which is `post cta bg.png`'s own
- *        aspect, so the photograph is laid in whole, not cropped. It is a
- *        layered background (fill + object-cover), never an inline <img>:
- *        the copy sits on top of it, centred.
- *   56   tail
+ * The banner: 1212.5 wide, 2.906:1 — which is `post cta bg.png`'s own aspect,
+ * so the photograph is laid in whole, not cropped. It is a layered background
+ * (fill + object-cover), never an inline <img>: the copy sits on top of it,
+ * centred.
  *
  * Inside the banner, measured from its top edge:
  *   89.5 italic serif eyebrow
@@ -33,7 +29,7 @@ export function StillNotConvinced() {
     <Section
       id="book-a-call"
       aria-labelledby="cta-heading"
-      className="scroll-mt-[64px] bg-white pt-10 pb-12 sm:pt-12 lg:scroll-mt-[74px] lg:pt-[47px] lg:pb-[56px]"
+      className="scroll-mt-[64px] bg-white pt-sec-sm pb-sec-sm lg:scroll-mt-[74px] lg:pt-sec-md lg:pb-sec-md"
     >
       <Container>
         <Reveal distance={22} className="mx-auto w-full lg:max-w-[1212px]">
@@ -59,7 +55,7 @@ export function StillNotConvinced() {
 
             <h2
               id="cta-heading"
-              className="mt-[18px] max-w-[880px] text-[26px] leading-[1.24] font-bold tracking-[-0.02em] text-white sm:text-[32px] lg:mt-[25px] lg:text-[38px] lg:leading-[50px]"
+              className="mt-[18px] max-w-[880px] text-[24px] leading-[1.24] font-bold tracking-[-0.02em] text-white sm:text-[28px] lg:mt-[25px] lg:text-display-md lg:leading-[50px]"
             >
               Try a Talently hire risk-free. No upfront
               <br className="hidden lg:inline" />{" "}

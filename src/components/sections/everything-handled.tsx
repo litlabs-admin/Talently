@@ -23,14 +23,14 @@ export function EverythingHandled() {
     <section
       id="whats-included"
       aria-labelledby="everything-handled-heading"
-      className="scroll-mt-[64px] pt-24 pb-20 sm:pt-32 lg:scroll-mt-[74px] lg:pt-[160px] lg:pb-[150px] xl:pt-[210px] xl:pb-[195px]"
+      className="scroll-mt-[64px] pt-sec-lg pb-sec-lg lg:scroll-mt-[74px]"
     >
       <DarkContainer>
         <div className="grid gap-y-11 lg:grid-cols-[minmax(0,1.11fr)_minmax(0,1fr)] lg:gap-x-10 lg:gap-y-0 xl:grid-cols-[556px_500px] xl:gap-x-[77px]">
           <Reveal className="order-1 lg:col-start-1 lg:row-start-1">
             <h2
               id="everything-handled-heading"
-              className="text-[34px] leading-[1.1] font-bold tracking-[-0.03em] text-white sm:text-[44px] lg:leading-[54px] xl:text-[52px] xl:leading-[63px]"
+              className="text-[28px] leading-[1.1] font-bold tracking-[-0.03em] text-white sm:text-[34px] lg:text-display-lg"
             >
               Everything Handled,
               <br />
@@ -42,7 +42,7 @@ export function EverythingHandled() {
 
           <Reveal
             delay={220}
-            className="order-2 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-[62px]"
+            className="order-2 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-head-md"
           >
             <div className="relative aspect-[500/508] w-full overflow-hidden bg-ink-warm xl:w-[500px]">
               <Image
@@ -55,7 +55,7 @@ export function EverythingHandled() {
             </div>
           </Reveal>
 
-          <ul className="order-3 border-t border-white/25 lg:col-start-1 lg:row-start-2 lg:mt-[65px]">
+          <ul className="order-3 border-t border-white/25 lg:col-start-1 lg:row-start-2 lg:mt-head-md">
             {HANDLED.map((item, i) => (
               <Reveal
                 as="li"
