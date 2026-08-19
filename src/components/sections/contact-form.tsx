@@ -1,6 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 
@@ -137,7 +138,7 @@ function LockIcon({ className }: { className?: string }) {
 
 export function ContactForm() {
   const uid = useId();
-  const [sent, setSent] = useState(false);
+  const router = useRouter();
   const f = (n: string) => `${uid}-${n}`;
 
   return (
@@ -145,7 +146,7 @@ export function ContactForm() {
       noValidate={false}
       onSubmit={(e) => {
         e.preventDefault();
-        setSent(true);
+        router.push("/thank-you");
       }}
       className="w-full"
     >
@@ -230,25 +231,18 @@ export function ContactForm() {
           type="submit"
           className="group inline-flex h-[52px] w-full max-w-[410px] items-center justify-center gap-2 rounded-none bg-ink text-[17px] font-semibold tracking-[-0.01em] text-white transition-[background-color,transform] duration-200 ease-out hover:bg-ink-warm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink active:scale-[0.985] lg:text-[19px]"
         >
-          {sent ? "Thanks — we'll be in touch" : "See Available Times"}
-          {!sent && (
-            <span
-              aria-hidden
-              className="transition-transform duration-200 ease-out group-hover:translate-x-1"
-            >
-              &#8594;
-            </span>
-          )}
+          See Available Times
+          <span
+            aria-hidden
+            className="transition-transform duration-200 ease-out group-hover:translate-x-1"
+          >
+            &#8594;
+          </span>
         </button>
 
-        <p
-          aria-live="polite"
-          className="mt-[22px] text-center text-[15px] leading-[22px] font-semibold tracking-[-0.01em] text-ink lg:mt-[20px] lg:text-[17px]"
-        >
+        <p className="mt-[22px] text-center text-[15px] leading-[22px] font-semibold tracking-[-0.01em] text-ink lg:mt-[20px] lg:text-[17px]">
           <LockIcon className="mr-2 inline-block size-[15px] shrink-0 translate-y-[2px] text-[#C9A227] lg:size-4" />
-          {sent
-            ? "Your details are in — we'll send times shortly."
-            : "Your info is only used to prepare your consultation"}
+          Your info is only used to prepare your consultation
         </p>
       </div>
     </form>

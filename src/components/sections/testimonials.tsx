@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Container } from "@/components/site/container";
 import { Reveal } from "@/components/site/reveal";
 import { Section } from "@/components/site/section";
@@ -12,6 +14,7 @@ type Testimonial = {
   name: string;
   role: string;
   rating: number;
+  avatar: string;
 };
 
 const TESTIMONIALS: Testimonial[] = [
@@ -21,6 +24,7 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Jessica Adams",
     role: "Founder Growthlabs",
     rating: 4.5,
+    avatar: "/images/testimonial-1.jpg",
   },
   {
     quote:
@@ -28,6 +32,7 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Michael Chen",
     role: "Head of Sales, TechFlow Inc",
     rating: 4.5,
+    avatar: "/images/testimonial-2.jpg",
   },
   {
     quote:
@@ -35,6 +40,7 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Sarah Mitchell",
     role: "COO, ScaleUp SaaS",
     rating: 4.5,
+    avatar: "/images/testimonial-3.jpg",
   },
 ];
 
@@ -104,10 +110,16 @@ export function Testimonials() {
                   </blockquote>
 
                   <figcaption className="mt-7 flex items-center gap-[10px] md:mt-[22px] md:gap-[8px] lg:mt-[30px] lg:gap-[11px] xl:mt-[32px] xl:gap-[13px]">
-                    <span
-                      aria-hidden
-                      className="size-[38px] shrink-0 rounded-full bg-[#d9d9d9] md:size-[28px] lg:size-[36px] xl:size-[43px]"
-                    />
+                    <span className="relative size-[38px] shrink-0 overflow-hidden rounded-full bg-[#d9d9d9] md:size-[28px] lg:size-[36px] xl:size-[43px]">
+                      <Image
+                        src={t.avatar}
+                        alt={t.name}
+                        fill
+                        sizes="43px"
+                        className="object-cover"
+                        priority
+                      />
+                    </span>
                     <div className="min-w-0">
                       <div className="flex items-center gap-[6px] lg:gap-[8px]">
                         <span className="truncate text-[18px] leading-[24px] font-bold tracking-[-0.02em] text-ink md:text-[15px] md:leading-[20px] lg:text-[20px] lg:leading-[26px] xl:text-[24px] xl:leading-[30px]">
