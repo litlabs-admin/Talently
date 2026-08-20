@@ -66,7 +66,7 @@ export function EveryRole() {
       className="scroll-mt-[64px] bg-white pt-sec-sm pb-sec-sm lg:scroll-mt-[74px] lg:pt-sec-xs lg:pb-sec-md"
     >
       <Container>
-        <div className="lg:grid lg:grid-cols-[652px_619px] lg:gap-x-[17px]">
+        <div className="lg:grid lg:grid-cols-[minmax(0,652fr)_minmax(0,619fr)] lg:gap-x-[17px]">
           {/* Left: heading + photo. Sticky from lg up, bounded by the grid,
               so it lets go exactly at the section's last hairline. */}
           <div className="lg:sticky lg:top-[92px] lg:self-start">
@@ -83,12 +83,12 @@ export function EveryRole() {
             </Reveal>
 
             <Reveal delay={220} distance={28}>
-              <div className="relative mt-8 aspect-[652/439] w-full overflow-hidden lg:mt-[45px] lg:h-[439px] lg:w-[652px]">
+              <div className="relative mt-8 aspect-[652/439] w-full overflow-hidden lg:mt-[45px]">
                 <Image
                   src="/images/roles-group.webp"
                   alt="Four colleagues reviewing a document together in an office"
                   fill
-                  sizes="(max-width: 1023px) 100vw, 652px"
+                  sizes="(max-width: 1023px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>

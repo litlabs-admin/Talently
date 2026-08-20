@@ -188,9 +188,19 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    /* The horizontal-overflow guard lives on <html>, not <body>. Set on
+       <body> it does not reliably propagate to the viewport in WebKit, and —
+       worse — the body then becomes a clip container, which makes it the
+       containing block for `position: fixed` descendants: the fixed site
+       header stops sticking on iOS Safari. On <html> the value propagates to
+       the viewport and html itself stays effectively `visible`, so fixed
+       positioning keeps resolving against the viewport. */
+    overflow-x: clip;
   }
   body {
-    overflow-x: clip;
+    /* Belt and braces: nothing in the document may be wider than the
+       viewport, so the guard above never has anything to clip. */
+    max-width: 100%;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }

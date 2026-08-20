@@ -46,7 +46,7 @@ function ColumnHeading({ children }: { children: React.ReactNode }) {
 }
 
 const LINK =
-  "inline-block text-[15px] leading-[22px] text-white/72 transition-colors duration-200 hover:text-white";
+  "inline-block max-w-full break-words text-[15px] leading-[22px] text-white/72 transition-colors duration-200 hover:text-white";
 
 /**
  * Pure-black footer. Its top 119px sit behind the Post CTA card, so the
@@ -59,7 +59,7 @@ export function SiteFooter() {
       <div className="mx-auto w-full max-w-[1341px] px-5 sm:px-10 lg:px-8">
         {/* Columns ---------------------------------------------------- */}
         <div className="pt-sec-lg pb-sec-sm lg:px-14 lg:pb-sec-md">
-          <div className="grid grid-cols-2 gap-x-6 gap-y-11 md:gap-x-8 md:gap-y-14 lg:grid-cols-[636fr_295fr_234fr] lg:gap-x-0 lg:gap-y-0">
+          <div className="grid grid-cols-2 [&>*]:min-w-0 gap-x-6 gap-y-11 md:gap-x-8 md:gap-y-14 lg:grid-cols-[636fr_295fr_234fr] lg:gap-x-0 lg:gap-y-0">
             {/* Brand */}
             <div className="col-span-2 lg:col-span-1">
               <Logo className="gap-3" />
