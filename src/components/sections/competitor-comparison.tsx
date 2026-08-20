@@ -62,8 +62,14 @@ export function CompetitorComparison() {
 
         {/* Table ------------------------------------------------------- */}
         <Reveal delay={180} className="mt-head-sm lg:mt-head-lg">
-          {/* Controlled horizontal scroll below lg; never the page itself. */}
-          <div className="-mx-5 overflow-x-auto px-5 sm:-mx-8 sm:px-8 lg:mx-0 lg:overflow-visible lg:px-0">
+          {/* Controlled horizontal scroll below lg; never the page itself.
+              `relative` is load-bearing: the table's 32 `sr-only` spans are
+              absolutely positioned, and without a positioned ancestor here
+              they resolve against the section instead — escaping this
+              scroller entirely and dragging the whole document out to 786px
+              on a 360px phone. Positioning the scroller makes it their
+              containing block, so its overflow actually contains them. */}
+          <div className="relative -mx-5 overflow-x-auto px-5 sm:-mx-8 sm:px-8 lg:mx-0 lg:overflow-visible lg:px-0">
             <div
               className="min-w-[840px] bg-surface pb-10 lg:min-w-0 lg:pb-9"
             >
