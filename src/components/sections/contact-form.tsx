@@ -1,8 +1,9 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useId } from "react";
 import { useRouter } from "next/navigation";
 
+import { SelectField } from "@/components/ui/select-field";
 import { cn } from "@/lib/utils";
 
 /**
@@ -61,63 +62,6 @@ function Label({
     >
       {children}
     </label>
-  );
-}
-
-function Chevron() {
-  return (
-    <svg
-      viewBox="0 0 12 8"
-      aria-hidden
-      className="pointer-events-none absolute right-4 bottom-[17px] w-[11px] fill-[#4A4A4A] lg:bottom-[15px]"
-    >
-      <path d="M0 0h12L6 8 0 0Z" />
-    </svg>
-  );
-}
-
-/** Native select, styled flat like the text inputs. */
-function Select({
-  id,
-  name,
-  label,
-  placeholder,
-  options,
-}: {
-  id: string;
-  name: string;
-  label: string;
-  placeholder: string;
-  options: string[];
-}) {
-  const [value, setValue] = useState("");
-
-  return (
-    <div className="relative">
-      <Label htmlFor={id}>{label}</Label>
-      <select
-        id={id}
-        name={name}
-        required
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        className={cn(
-          FIELD,
-          "cursor-pointer appearance-none pr-11",
-          value ? "text-ink" : "text-[#8A8A8A]",
-        )}
-      >
-        <option value="" disabled>
-          {placeholder}
-        </option>
-        {options.map((option) => (
-          <option key={option} value={option} className="text-ink">
-            {option}
-          </option>
-        ))}
-      </select>
-      <Chevron />
-    </div>
   );
 }
 
@@ -190,7 +134,7 @@ export function ContactForm() {
           />
         </div>
 
-        <Select
+        <SelectField
           id={f("role")}
           name="role"
           label="Role you're hiring for"
@@ -198,7 +142,7 @@ export function ContactForm() {
           options={ROLES}
         />
 
-        <Select
+        <SelectField
           id={f("size")}
           name="size"
           label="Size of the Company"
@@ -206,7 +150,7 @@ export function ContactForm() {
           options={SIZES}
         />
 
-        <Select
+        <SelectField
           id={f("timeline")}
           name="timeline"
           label="Hiring timeline"

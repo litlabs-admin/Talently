@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { Logo } from "@/components/site/logo";
-import { FacebookIcon, InstagramIcon } from "@/components/site/social-icons";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  LinkedinIcon,
+} from "@/components/site/social-icons";
 import { cn } from "@/lib/utils";
 
 const COMPANY = [
@@ -12,8 +16,25 @@ const COMPANY = [
 ];
 
 const SOCIALS = [
-  { label: "Facebook", href: "#", Icon: FacebookIcon, brand: true },
-  { label: "Instagram", href: "#", Icon: InstagramIcon, brand: false },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/people/Talently/61568111953811/",
+    Icon: FacebookIcon,
+    className: "bg-[#3757cb] hover:bg-[#4767db]",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/hirewithtalently/",
+    Icon: LinkedinIcon,
+    className: "bg-[#0a66c2] hover:bg-[#1a76d2]",
+  },
+  // TODO: swap in the real Instagram profile URL once credentials arrive.
+  {
+    label: "Instagram",
+    href: "#",
+    Icon: InstagramIcon,
+    className: "bg-[#4b4b4b] hover:bg-[#5d5d5d]",
+  },
 ];
 
 function ColumnHeading({ children }: { children: React.ReactNode }) {
@@ -47,16 +68,17 @@ export function SiteFooter() {
                 talent. Full-time, vetted, and ready to work your hours.
               </p>
               <ul className="mt-7 flex items-center gap-[13px] lg:mt-[26px]">
-                {SOCIALS.map(({ label, href, Icon, brand }) => (
+                {SOCIALS.map(({ label, href, Icon, className }) => (
                   <li key={label}>
                     <Link
                       href={href}
                       aria-label={label}
+                      {...(href.startsWith("http")
+                        ? { target: "_blank", rel: "noreferrer noopener" }
+                        : {})}
                       className={cn(
                         "flex size-[37px] items-center justify-center rounded-full text-white transition-[background-color,transform] duration-200 ease-out hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white",
-                        brand
-                          ? "bg-[#3757cb] hover:bg-[#4767db]"
-                          : "bg-[#4b4b4b] hover:bg-[#5d5d5d]",
+                        className,
                       )}
                     >
                       <Icon className="size-[17px]" />
@@ -93,12 +115,12 @@ export function SiteFooter() {
                   </a>
                 </li>
                 <li>
-                  <Link href="#privacy" className={LINK}>
+                  <Link href="/privacy-policy" className={LINK}>
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="#terms" className={LINK}>
+                  <Link href="/terms-of-service" className={LINK}>
                     Terms of Service
                   </Link>
                 </li>

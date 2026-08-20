@@ -13,11 +13,12 @@ const ROLES = [
  * padding, 32px top, "$65,000/yr" 30/700, "$24,000/yr" 70px Ancizar italic,
  * body 18/25, three 132x56 chips on a 24px gap.
  *
- * Motion: a one-shot entrance (strike draws across the old price, the new
- * price wipes in, the rule wipes, copy rises), then a seamless 6.5s ambient
- * loop — a highlight travelling across the three role chips plus a single
- * sheen pass. No float or bounce; the card stays put. Everything collapses to
- * the resting state under prefers-reduced-motion.
+ * Motion: one 6.5s master cycle, repeated. The strike draws across the old
+ * price, the new price wipes in, the rule wipes, copy and chips rise, a
+ * highlight travels the chips, a sheen crosses the card, then everything
+ * fades out just before the cycle restarts. The first pass doubles as the
+ * page-load entrance. No float or bounce; the card stays put. Everything
+ * collapses to the resting state under prefers-reduced-motion.
  */
 export function HeroPriceCard({ className }: { className?: string }) {
   return (
@@ -67,9 +68,12 @@ export function HeroPriceCard({ className }: { className?: string }) {
               <li
                 key={role.title}
                 className="tl-chip relative flex h-[52px] flex-col items-center justify-center gap-px overflow-hidden bg-ink-warm px-2 text-white lg:h-14"
-                style={{
-                  animationDelay: `${1.9 + i * 0.12}s, ${2.6 + i * 0.9}s`,
-                }}
+                style={
+                  {
+                    "--tl-chip-in": `${0.75 + i * 0.1}s`,
+                    "--tl-chip-hi": `${2.6 + i * 0.4}s`,
+                  } as React.CSSProperties
+                }
               >
                 <span className="text-[13px] leading-tight lg:text-[14px]">
                   {role.title}
@@ -80,7 +84,9 @@ export function HeroPriceCard({ className }: { className?: string }) {
                 <span
                   aria-hidden
                   className="tl-chip-bar absolute inset-x-0 bottom-0 h-[2px] bg-white/70"
-                  style={{ animationDelay: `${2.6 + i * 0.9}s` }}
+                  style={
+                    { "--tl-chip-hi": `${2.6 + i * 0.4}s` } as React.CSSProperties
+                  }
                 />
               </li>
             ))}

@@ -40,3 +40,11 @@ export function GithubIcon({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export function LinkedinIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className={className}>
+      <path d="M6.94 8.9H3.6V21h3.34V8.9ZM5.27 3a1.94 1.94 0 1 0 0 3.88 1.94 1.94 0 0 0 0-3.88ZM20.4 13.9c0-3.2-1.71-4.7-4-4.7-1.84 0-2.66 1.01-3.12 1.72V8.9H9.94c.04.94 0 12.1 0 12.1h3.34v-6.76c0-.3.02-.6.11-.81.24-.6.79-1.22 1.72-1.22 1.21 0 1.7.92 1.7 2.28V21h3.35v-7.1Z" />
+    </svg>
+  );
+}
