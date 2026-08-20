@@ -67,12 +67,13 @@ export const privacySections: LegalSection[] = [
     blocks: [
       {
         type: "p",
-        text: "We only collect what we need to answer your enquiry, run a consultation, and place a candidate with you.",
+        text: "We only collect what we need to book your consultation, run it, and place a candidate with you.",
       },
       {
         type: "list",
         items: [
-          "Details you give us directly — your name, work email, company name, role requirements, and anything else you type into our contact or consultation form.",
+          "Booking details — the name, email address, time zone, chosen slot, and any notes you enter when you book a consultation through the scheduling tool embedded on our contact page.",
+          "Meeting details — the calendar invitation, the video call link, and any notes we take during the consultation.",
           "Candidate information — if you apply to work through Talently, the CV, work history, references, and assessment results you submit to us.",
           "Correspondence — emails, call notes, and messages exchanged with our team.",
           "Technical information — IP address, browser type, device type, and the pages you visited, collected automatically by our hosting and analytics providers.",
@@ -97,7 +98,7 @@ export const privacySections: LegalSection[] = [
         type: "rows",
         rows: [
           {
-            left: "Responding to your enquiry and booking a consultation",
+            left: "Booking, preparing for, and running your consultation",
             right: "Legitimate interests",
           },
           { left: "Shortlisting and placing candidates with you", right: "Contract" },
@@ -129,7 +130,9 @@ export const privacySections: LegalSection[] = [
         items: [
           "[Hosting Provider] — hosting this website and delivering its pages.",
           "[Email Provider] — handling the messages you send us and our replies.",
-          "[CRM / Scheduling Provider] — storing enquiries and booking consultations.",
+          "Cal.com — the scheduling tool embedded on our contact page, which takes your booking, holds the slot, and sends the confirmation.",
+          "[Video Call Provider] — hosting the consultation call and issuing the meeting link.",
+          "[CRM Provider] — storing enquiries and placement records.",
           "[Analytics Provider] — aggregate website usage statistics.",
           "Clients — where you are a candidate, we share your profile with the hiring company only once you agree to be put forward.",
           "Professional advisers and authorities — where the law requires it.",
@@ -195,12 +198,16 @@ export const privacySections: LegalSection[] = [
     blocks: [
       {
         type: "p",
-        text: "We keep cookies to a minimum — there are no advertising or cross-site tracking cookies on this website.",
+        text: "We keep cookies to a minimum — there are no advertising or cross-site tracking cookies on this website. The booking tool on our contact page is loaded from Cal.com inside a frame and sets its own strictly necessary cookies, which hold your booking while you complete it.",
       },
       {
         type: "rows",
         rows: [
           { left: "Strictly necessary — page delivery and security", right: "Always on" },
+          {
+            left: "Booking tool — holding your consultation booking",
+            right: "Always on",
+          },
           { left: "Analytics — aggregate visit counts", right: "[Consent required]" },
           { left: "Advertising and cross-site tracking", right: "Not used" },
         ],
@@ -296,6 +303,7 @@ export const termsSections: LegalSection[] = [
         type: "list",
         items: [
           "We find and screen candidates against the role brief you give us.",
+          "We hold a free consultation, booked through the scheduling tool on our contact page, to take your role brief.",
           "We present a shortlist and arrange interviews at your convenience.",
           "We support the offer, contracting, and onboarding steps.",
           "We are not the employer of record unless [Company Name] has agreed to that in writing.",
@@ -311,7 +319,7 @@ export const termsSections: LegalSection[] = [
     blocks: [
       {
         type: "p",
-        text: "You must be at least 18 and able to enter a contract on behalf of the business you name. The details you give us — company name, role brief, budget, contact information — must be accurate and kept up to date.",
+        text: "You must be at least 18 and able to enter a contract on behalf of the business you name. The details you give us when you book a consultation, and afterwards — company name, role brief, budget, contact information — must be accurate and kept up to date.",
       },
       {
         type: "p",
@@ -326,7 +334,7 @@ export const termsSections: LegalSection[] = [
     blocks: [
       {
         type: "p",
-        text: "The consultation and the shortlist are free. A fee becomes due only once you hire someone we introduced.",
+        text: "Booking a consultation costs nothing, and neither does the consultation or the shortlist that follows it. A fee becomes due only once you hire someone we introduced.",
       },
       {
         type: "rows",
@@ -337,6 +345,10 @@ export const termsSections: LegalSection[] = [
           { left: "Late payment interest", right: "[Interest Rate]" },
           { left: "Currency and taxes", right: "[Currency], [Tax Treatment]" },
         ],
+      },
+      {
+        type: "p",
+        text: "Consultations are held at the slot you book. You can reschedule or cancel from the link in your confirmation email at any point up to [Cancellation Notice] before the call; repeated no-shows may mean we stop offering slots.",
       },
       {
         type: "p",
@@ -396,7 +408,8 @@ export const termsSections: LegalSection[] = [
           "Scrape, crawl, or bulk-download its content without written permission.",
           "Attempt to gain unauthorised access to any part of the site or its systems.",
           "Upload anything malicious, unlawful, or that infringes the rights of others.",
-          "Use the contact forms to send unsolicited marketing.",
+          "Use the booking tool to send unsolicited marketing, or to hold slots you do not intend to attend.",
+          "Interfere with the third-party booking tool embedded on our contact page, or use it other than to book a genuine consultation.",
         ],
       },
       {

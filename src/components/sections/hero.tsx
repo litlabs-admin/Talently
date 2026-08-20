@@ -32,20 +32,12 @@ export function Hero() {
         <div className="flex flex-1 flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-10">
           {/* Copy -------------------------------------------------------- */}
           <div className="lg:max-w-[640px] lg:shrink-0">
-            {/* 36px pill, 17px label */}
-            <p style={{ "--d": "0.05s" } as React.CSSProperties} className="tl-in inline-flex items-center gap-2.5 rounded-full bg-white/10 px-4 py-[7px] text-[14px] text-white backdrop-blur-sm lg:h-9 lg:py-0 lg:text-[15px]">
-              <span aria-hidden className="text-[9px] leading-none opacity-90">
-                &#9679;
-              </span>
-              For Consumer Lending
-            </p>
-
             {/* 62px / -0.035em / 63px leading. The serif runs at 0.92em so its
                 (much larger) caps optically match the sans. */}
             <h1
               id="hero-heading"
               style={{ "--d": "0.15s" } as React.CSSProperties}
-              className="tl-in mt-7 text-[34px] leading-[1.06] font-bold tracking-[-0.03em] text-white sm:text-[44px] lg:mt-[35px] lg:text-display-xl lg:tracking-[-0.03em]"
+              className="tl-in text-[34px] leading-[1.06] font-bold tracking-[-0.03em] text-white sm:text-[44px] lg:text-display-xl lg:tracking-[-0.03em]"
             >
               Hire Top 2% <em className="display-serif">South</em>
               <br className="hidden lg:inline" />{" "}
@@ -62,10 +54,6 @@ export function Hero() {
             <div style={{ "--d": "0.4s" } as React.CSSProperties} className="tl-in mt-8 flex flex-col gap-3 sm:flex-row sm:items-start lg:mt-[42px] lg:gap-[26px]">
               <ActionButton href="/contact" variant="light">
                 Book Your Free Consultation
-                <ButtonArrow />
-              </ActionButton>
-              <ActionButton href="#roles" variant="ghost">
-                Shortlist within 48 hours
                 <ButtonArrow />
               </ActionButton>
             </div>
